@@ -1,0 +1,3 @@
+SELECT MAX(open)
+FROM stock_prices
+WHERE ticker='NFLX';
