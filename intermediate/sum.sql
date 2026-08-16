@@ -1,0 +1,3 @@
+SELECT COUNT(units_sold), SUM(total_sales)
+FROM pharmacy_sales
+WHERE manufacturer = 'Pfizer';
