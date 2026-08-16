@@ -1,0 +1,3 @@
+SELECT MIN(open) 
+FROM stock_prices
+WHERE ticker='MSFT';
