@@ -29,7 +29,7 @@
 -- FROM orders;
 
 -- The above version corrects the item (why?), when we could just correct the order_id
--- Simplified version be like
+-- Simplified version be like (with cross join)
 
 WITH order_data AS (
   SELECT max(order_id) AS max_id
