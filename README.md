@@ -5,7 +5,7 @@
 **A structured collection of SQL solutions, notes, and cheat sheets based on [DataLemur](https://datalemur.com/sql-tutorial)'s interview-prep curriculum.**
 
 ![SQL](https://img.shields.io/badge/SQL-PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
-![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)
+![Status](https://img.shields.io/badge/status-complete-brightgreen?style=flat-square)
 ![Made with](https://img.shields.io/badge/made%20with-%E2%98%95%20and%20queries-blueviolet?style=flat-square)
 
 </div>
@@ -18,7 +18,7 @@ A collection of solved query files and hand-written study notes based on **DataL
 
 Many of the problems mirror real questions asked by companies like **LinkedIn** and **JPMorgan Chase**, so beyond syntax, the notes lean into the *reasoning* behind each solution — not just the query that passes.
 
-**40+ solved problems** across 3 difficulty levels, plus concept write-ups for the trickier topics.
+**70+ solved problems** across 3 difficulty levels, plus concept write-ups for the trickier topics — covering the full DataLemur curriculum from basic filtering through window functions, CTEs, and set operations.
 
 ### Contents
 
@@ -35,7 +35,7 @@ Many of the problems mirror real questions asked by companies like **LinkedIn** 
 datalemur/
 ├── basic/         # Fundamentals — filtering, sorting, pattern matching
 ├── intermediate/  # Aggregates, GROUP BY / HAVING, joins, NULLs, dates
-└── advanced/      # Deeper concepts — CTEs vs. subqueries, and beyond
+└── advanced/      # CTEs, window functions, self joins, set ops, pivoting, strings
 ```
 
 Each folder mixes two file types:
@@ -133,6 +133,7 @@ Aggregation, grouping, joins, `NULL` handling, and date logic — the workhorses
 | 4 types of joins — notes | [`28_joins.md`](intermediate/28_joins.md) |
 | `JOIN` with `NULL` handling | [`29_join_null.sql`](intermediate/29_join_null.sql) |
 | `JOIN` with `CASE` | [`30_join_with_case.sql`](intermediate/30_join_with_case.sql) |
+| `INNER JOIN` vs. `OUTER JOIN` — notes | [`34_inner_vs_outer_join.md`](intermediate/34_inner_vs_outer_join.md) |
 
 </details>
 
@@ -149,17 +150,91 @@ Aggregation, grouping, joins, `NULL` handling, and date logic — the workhorses
 
 ## 🚀 Advanced
 
-More advanced topics will be added here over time.
+CTEs, window functions, self joins, set operations, pivoting, string functions, and a full case-study query — the deep end of the curriculum.
+
+<details>
+<summary><b>CTEs & subqueries</b></summary>
 
 | Topic | File |
 | --- | --- |
-| CTEs vs. subqueries — notes | [`cte_vs_subqueries.md`](advanced/cte_vs_subqueries.md) |
+| CTEs vs. subqueries — notes | [`01_cte_vs_subqueries.md`](advanced/01_cte_vs_subqueries.md) |
+| `RANK()` with a CTE | [`02_cte_ranking.sql`](advanced/02_cte_ranking.sql) |
+| Subquery with `DISTINCT` | [`03_subquery_with_distinct.sql`](advanced/03_subquery_with_distinct.sql) |
+| CTE with `CASE` | [`04_cte_with_case.sql`](advanced/04_cte_with_case.sql) |
+
+</details>
+
+<details>
+<summary><b>Window functions</b></summary>
+
+| Topic | File |
+| --- | --- |
+| Window functions — notes | [`05_window_functions.md`](advanced/05_window_functions.md) |
+| SQL processing order — notes | [`06_sql_processing_order.md`](advanced/06_sql_processing_order.md) |
+| `FIRST_VALUE()` | [`07_first_value_win_function.sql`](advanced/07_first_value_win_function.sql) |
+| `RANK()` — notes | [`08_rank_window_function.md`](advanced/08_rank_window_function.md) |
+| `RANK()` with multiple CTEs | [`09_rank_multiple_cte.sql`](advanced/09_rank_multiple_cte.sql) |
+| `RANK()` with multiple joins | [`10_rank_multiple_join_exact_results_09.sql`](advanced/10_rank_multiple_join_exact_results_09.sql) |
+| `MAX()` as a window function with a CTE | [`11_max_window_cte.sql`](advanced/11_max_window_cte.sql) |
+| `RANK()` with `CASE` | [`12_rank_with_case.sql`](advanced/12_rank_with_case.sql) |
+| `LEAD()` / `LAG()` — notes | [`13_lead_lag_functions.md`](advanced/13_lead_lag_functions.md) |
+| `LEAD()` / `LAG()` example | [`14_lead_lag_sample.sql`](advanced/14_lead_lag_sample.sql) |
+| `LEAD()` / `LAG()` with a CTE | [`15_lead_lag_with_cte.sql`](advanced/15_lead_lag_with_cte.sql) |
+
+</details>
+
+<details>
+<summary><b>Joins & set operations</b></summary>
+
+| Topic | File |
+| --- | --- |
+| Self joins — notes | [`16_self_join.md`](advanced/16_self_join.md) |
+| Self join with `INNER JOIN` | [`17_self_with_inner_join.sql`](advanced/17_self_with_inner_join.sql) |
+| `UNION`, `INTERSECT`, `EXCEPT` — notes | [`18_data_combination_set_operations.md`](advanced/18_data_combination_set_operations.md) |
+| `UNION ALL` with a CTE | [`19_union_all_with_cte_floor.sql`](advanced/19_union_all_with_cte_floor.sql) |
+| `UNION ALL` with a CTE — notes | [`20_union_all_with_cte_floor_note.md`](advanced/20_union_all_with_cte_floor_note.md) |
+| `EXCEPT` | [`21_except.sql`](advanced/21_except.sql) |
+
+</details>
+
+<details>
+<summary><b>Query design & execution order</b></summary>
+
+| Topic | File |
+| --- | --- |
+| SQL query best practices — notes | [`22_sql_query_best_practices.md`](advanced/22_sql_query_best_practices.md) |
+| SQL order of execution — notes | [`23_sql_order_of_execution.md`](advanced/23_sql_order_of_execution.md) |
+
+</details>
+
+<details>
+<summary><b>Pivoting & string functions</b></summary>
+
+| Topic | File |
+| --- | --- |
+| Pivoting & unpivoting — notes | [`24_pivot_unpivot.md`](advanced/24_pivot_unpivot.md) |
+| Pivot: rows to columns | [`25_pivot_row_to_column.sql`](advanced/25_pivot_row_to_column.sql) |
+| Unpivot example | [`26_unpivot_example.sql`](advanced/26_unpivot_example.sql) |
+| String & text functions — notes | [`27_sql_string_text_functions.md`](advanced/27_sql_string_text_functions.md) |
+| `LOWER()` | [`28_lower_function.sql`](advanced/28_lower_function.sql) |
+| `CONCAT()` | [`29_concat_function.sql`](advanced/29_concat_function.sql) |
+
+</details>
+
+<details>
+<summary><b>Case study</b></summary>
+
+| Topic | File |
+| --- | --- |
+| Instacart reorder analysis | [`30_instacart_case_study.sql`](advanced/30_instacart_case_study.sql) |
+
+</details>
 
 ## 📝 Notes on style
 
 - All solutions are written in **PostgreSQL** syntax (DataLemur's default execution environment).
 - `.md` notes favor **comparison tables and "golden rule" summaries** over long prose — built to be skimmed the night before an interview.
-- Files are numbered in the order the concepts were tackled, roughly following DataLemur's own tutorial progression from basic filtering to joins and date logic.
+- Files are numbered in the order the concepts were tackled, following DataLemur's own tutorial progression — from basic filtering through joins, window functions, and set operations.
 
 ## 🔗 Resources
 
